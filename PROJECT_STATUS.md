@@ -76,6 +76,12 @@ None. Everything implemented matches observed reference behavior, including two 
 
 - 2026-10-31: differential harness, 1,113 + 7 CLI cases, 0 mismatches.
 - 2026-10-31: independent test suite, 87/87 passing.
+- 2026-10-31: `parse()`'s `str` input encoding resolution fixed to match the
+  reference exactly — the resolved `encoding` (not the raw possibly-`None`
+  argument) is now also what gets passed to `expat.ParserCreate(...)`, per
+  the pinned reference's own `encoding = encoding or 'utf-8'` (line 349 of
+  `xmltodict.py`) immediately preceding its `ParserCreate` call. Re-ran
+  harness (1,113 + 7 CLI, 0 mismatches) and test suite (87/87) after the fix.
 
 ## Next recommended development steps
 

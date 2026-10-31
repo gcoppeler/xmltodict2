@@ -270,7 +270,8 @@ def parse(
     )
 
     if isinstance(xml_input, str):
-        xml_input = xml_input.encode(encoding or "utf-8")
+        encoding = encoding or "utf-8"
+        xml_input = xml_input.encode(encoding)
 
     parser_namespace_sep = namespace_separator if process_namespaces else None
     parser = expat.ParserCreate(encoding, parser_namespace_sep)
