@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+.venv-reference/
+
+# The pinned reference clone is third-party, read-only material for
+# requirements discovery and the differential harness — not part of
+# this project's own source and not committed here.
+reference/
+
+.DS_Store
